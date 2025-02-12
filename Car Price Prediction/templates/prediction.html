@@ -1,0 +1,33 @@
+<!-- prediction.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+        .prediction-container {
+            width: 80%;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .prediction-result {
+            font-size: 24px;
+            font-weight: bold;
+            color: #337ab7;
+        }
+    </style>
+</head>
+<body>
+    <div class="prediction-container">
+        <h2>Prediction Result</h2>
+        <p class="prediction-result">Your car will cost you approximately Rs {{ prediction }}.</p>
+    </div>
+</body>
+</html>

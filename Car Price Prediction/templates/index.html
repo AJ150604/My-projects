@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Price Prediction</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('ss2.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            border: 3px solid #007bff;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            margin-bottom: 5px;
+            color: #555;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        input[type="submit"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        
+        input[type="submit"]:active {
+            background-color: #004080;
+        }
+        
+        .container:before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: #007bff;
+            border-radius: 50%;
+            opacity: 0.5;
+            z-index: -1;
+            animation: moveBg 6s infinite;
+        }
+        
+        .container:after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: #007bff;
+            border-radius: 50%;
+            opacity: 0.5;
+            z-index: -1;
+            animation: moveBg 6s infinite reverse;
+        }
+        
+        @keyframes moveBg {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Car Price Prediction</h1>
+        
+        <form action="/predict" method="post">
+            <!-- Year input field -->
+            <label for="year">Year:</label>
+            <input type="number" id="year" name="year">
+            
+            <!-- Kilometers driven input field -->
+            <label for="km_driven">Kilometers Driven:</label>
+            <input type="number" id="km_driven" name="km_driven">
+            
+            <!-- Fuel type dropdown -->
+            <label for="fuel">Fuel:</label>
+            <select id="fuel" name="fuel">
+                <option value="0">CNG</option>
+                <option value="1">Diesel</option>
+                <option value="2">LPG</option>
+                <option value="3">Petrol</option>
+            </select>
+            
+            <!-- Seller type dropdown -->
+            <label for="seller_type">Seller Type:</label>
+            <select id="seller_type" name="seller_type">
+                <option value="0">Dealer</option>
+                <option value="1">Individual</option>
+                <option value="2">Trustmark Dealer</option>
+            </select>
+            
+            <!-- Transmission type dropdown -->
+            <label for="transmission">Transmission:</label>
+            <select id="transmission" name="transmission">
+                <option value="0">Automatic</option>
+                <option value="1">Manual</option>
+            </select>
+            
+            <!-- Owner type dropdown -->
+            <label for="owner">Owner:</label>
+            <select id="owner" name="owner">
+                <option value="0">First Owner</option>
+                <option value="1">Second Owner</option>
+                <option value="2">Third Owner</option>
+                <option value="3">Fourth & Above Owner</option>
+                <option value="4">Test Drive Car</option>
+            </select>
+            
+            <!-- Seats input field -->
+            <label for="seats">Seats:</label>
+            <input type="number" id="seats" name="seats">
+            
+            <!-- Max power input field -->
+            <label for="max_power">Max Power (in bph):</label>
+            <input type="number" id="max_power" name="max_power">
+            
+            <!-- Mileage input field -->
+            <label for="mileage">Mileage:</label>
+            <input type="number" id="mileage" name="mileage">
+            
+            <!-- Engine capacity input field -->
+            <label for="engine_cc">Engine (CC):</label>
+            <input type="number" id="engine_cc" name="engine_cc">
+            
+            <!-- Submit button -->
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>

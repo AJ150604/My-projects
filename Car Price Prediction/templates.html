@@ -1,0 +1,112 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Price Prediction</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #f2f2f2;
+        }
+        
+        h1 {
+            color: #00698f;
+            text-align: center;
+        }
+        
+        form {
+            width: 50%;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #666;
+        }
+        
+        input[type="number"], select {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        input[type="submit"] {
+            width: 100%;
+            height: 40px;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <h1>Car Price Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="year"><br><br>
+        
+        <label for="km_driven">Kilometers Driven:</label>
+        <input type="number" id="km_driven" name="km_driven"><br><br>
+        
+        <label for="fuel">Fuel:</label>
+        <select id="fuel" name="fuel">
+            <option value="0">CNG</option>
+            <option value="1">Diesel</option>
+            <option value="2">LPG</option>
+            <option value="3">Petrol</option>
+        </select><br><br>
+        
+        <label for="seller_type">Seller Type:</label>
+        <select id="seller_type" name="seller_type">
+            <option value="0">Dealer</option>
+            <option value="1">Individual</option>
+            <option value="2">Trustmark Dealer</option>
+        </select><br><br>
+        
+        <label for="transmission">Transmission:</label>
+        <select id="transmission" name="transmission">
+            <option value="0">Automatic</option>
+            <option value="1">Manual</option>
+        </select><br><br>
+        
+        <label for="owner">Owner:</label>
+        <select id="owner" name="owner">
+            <option value="0">First Owner</option>
+            <option value="1">Second Owner</option>
+            <option value="2">Third Owner</option>
+            <option value="3">Fourth & Above Owner</option>
+            <option value="4">Test Drive Car</option>
+        </select><br><br>
+        
+        <label for="seats">Seats:</label>
+        <input type="number" id="seats" name="seats"><br><br>
+        
+        <label for="max_power">Max Power (in bph):</label>
+        <input type="number" id="max_power" name="max_power"><br><br>
+        
+        <label for="mileage">Mileage:</label>
+        <input type="number" id="mileage" name="mileage"><br><br>
+        
+        <label for="engine_cc">Engine (CC):</label>
+        <input type="number" id="engine_cc" name="engine_cc"><br><br>
+        
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
