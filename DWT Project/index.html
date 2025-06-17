@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medical Image Watermarking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2>Apply Watermark to Medical Image</h2>
+
+    <form id="upload-form">
+        <label for="image-upload">Original Image:</label><br>
+        <input type="file" id="image-upload" accept="image/*"><br>
+        <img id="original-preview" class="preview" alt="Original Preview" ><br><br>
+
+        <!-- <label for="watermark-upload">Watermark Image:</label><br> -->
+        <!-- <input type="file" id="watermark-upload" accept="image/*"><br> -->
+        <!-- <img id="watermark-preview" class="preview" alt="Watermark Preview"><br><br> -->
+        <h4>Watermark Used:</h4>
+        <img src="static/Watermark.png" alt="Fixed Watermark" class="preview" style="display:block;">
+        
+        <button type="button" id="apply-watermark">Apply Watermark</button>
+    </form>
+
+    <h3>Watermarked Image:</h3>
+    <img id="watermarked-preview" class="preview" alt="Watermarked Image"><br>
+    <p id="psnr-value"></p>
+    <p id="ssim-value"></p>
+
+    <a id="download-link" download="watermarked.png">Download Watermarked Image</a>
+    <button id="extract-watermark">Extract Watermark</button>
+
+<h3>Extracted Image:</h3>
+<img id="extracted-preview" class="preview" alt="Extracted Image"><br>
+<p id="psnr-after"></p>
+<p id="ssim-after"></p>
+<a id="download-extracted-link" download="extracted_image.png" style="display:none;"><button>Download Extracted Image</button></a>
+    <script src="script.js"></script>
+</body>
+</html>
