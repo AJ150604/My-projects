@@ -26,7 +26,7 @@ def resize_image(image, size):
 #         watermark = np.array(watermark)
 
 #         if image.shape != watermark.shape:
-#             raise ValueError(f"❌ Input images must have the same dimensions. Got {image.shape} and {watermark.shape}")
+#             raise ValueError(f" Input images must have the same dimensions. Got {image.shape} and {watermark.shape}")
 
 #         # Apply DWT to original image
 #         cA, (cH, cV, cD) = pywt.dwt2(image, 'haar')
@@ -55,7 +55,7 @@ def resize_image(image, size):
 #         return encoded_image, psnr_before, ssim_before
 
 #     except Exception as e:
-#         print(f"❌ Error in apply_dwt_watermark: {str(e)}")
+#         print(f" Error in apply_dwt_watermark: {str(e)}")
 #         return None, None, None
 def apply_dwt_watermark(image_bytes):
     try:
@@ -92,7 +92,7 @@ def apply_dwt_watermark(image_bytes):
         return encoded_image, psnr_before, ssim_before
 
     except Exception as e:
-        print(f"❌ Error in apply_dwt_watermark: {str(e)}")
+        print(f" Error in apply_dwt_watermark: {str(e)}")
         return None, None, None
 
 
@@ -109,7 +109,7 @@ def apply_dwt_watermark(image_bytes):
 #         watermark = np.array(watermark)
 
 #         if watermarked.shape != watermark.shape:
-#             raise ValueError(f"❌ Input images must have the same dimensions. Got {watermarked.shape} and {watermark.shape}")
+#             raise ValueError(f" Input images must have the same dimensions. Got {watermarked.shape} and {watermark.shape}")
 
 #         # DWT on watermarked image
 #         cA_wm, (cH, cV, cD) = pywt.dwt2(watermarked, 'haar')
@@ -138,7 +138,7 @@ def apply_dwt_watermark(image_bytes):
 #         return encoded_image, psnr_after, ssim_after
 
 #     except Exception as e:
-#         print(f"❌ Error in remove_dwt_watermark: {str(e)}")
+#         print(f" Error in remove_dwt_watermark: {str(e)}")
 #         return None, None, None
 def remove_dwt_watermark(watermarked_bytes, watermark_bytes):
     try:
@@ -153,7 +153,7 @@ def remove_dwt_watermark(watermarked_bytes, watermark_bytes):
 
         
         if watermarked.shape != watermark.shape:
-            raise ValueError("❌ Shape mismatch between watermarked and watermark image.")
+            raise ValueError(" Shape mismatch between watermarked and watermark image.")
 
         
         cA_wm, (cH, cV, cD) = pywt.dwt2(watermarked, 'haar')
@@ -177,5 +177,5 @@ def remove_dwt_watermark(watermarked_bytes, watermark_bytes):
         return encoded_image, psnr_after, ssim_after
 
     except Exception as e:
-        print(f"❌ Error in remove_dwt_watermark: {str(e)}")
+        print(f" Error in remove_dwt_watermark: {str(e)}")
         return None, None, None
