@@ -78,7 +78,7 @@ async def extract_watermark(image: UploadFile = File(...)):
         # Load the fixed watermark image from server-side
         watermark_path = "static/Watermark.png"
         if not os.path.exists(watermark_path):
-            raise FileNotFoundError("❌ Watermark image not found on server.")
+            raise FileNotFoundError(" Watermark image not found on server.")
 
         with open(watermark_path, "rb") as wm_file:
             watermark_bytes = wm_file.read()
@@ -87,7 +87,7 @@ async def extract_watermark(image: UploadFile = File(...)):
         result_image, psnr_after, ssim_after = remove_dwt_watermark(image_bytes, watermark_bytes)
 
         if result_image is None:
-            raise ValueError("❌ Failed to extract watermark.")
+            raise ValueError(" Failed to extract watermark.")
 
         return {
             "image": result_image,
